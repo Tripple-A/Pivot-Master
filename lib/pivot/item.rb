@@ -8,29 +8,22 @@ module Pivot
       @project_code = @name.split('-')[0]
     end
 
-    def name
-      @name
-    end
+    attr_reader :name
 
-    def assignee
-      @assignee 
-    end
+    attr_reader :assignee
 
-    def points 
-      @points
-    end
+    attr_reader :points
 
     def +(another_item)
       @points + another_item.points
     end
 
-    def project_code
-      @project_code
-    end
+    attr_reader :project_code
 
     def valid?
-      valid_codes = ['AZR', 'EREC']
-      return true if valid_codes.include?(@project_code) 
+      valid_codes = %w[AZR EREC]
+      return true if valid_codes.include?(@project_code)
+
       false
     end
   end

@@ -1,12 +1,11 @@
 module Pivot
   class Tracker
-    
     def self.count(items)
       items.length
     end
 
     def self.item_for(items, assignee)
-      selected_items = items.select{|item| item[:assignee] == assignee}
+      selected_items = items.select { |item| item[:assignee] == assignee }
       selected_items.last
     end
 
@@ -15,12 +14,12 @@ module Pivot
     end
 
     def self.selected_points(items, assignee)
-      items.select{|item| item[:assignee] == assignee}
-      .inject(0) { |sum, item| sum + item[:points] }
+      items.select { |item| item[:assignee] == assignee }
+           .inject(0) { |sum, item| sum + item[:points] }
     end
 
     def self.total_points(items, assignee_hash = nil)
-      last_pivots = Hash.new
+      last_pivots = {}
       items.each do |item|
         last_pivots[item[:assignee]] = item[:points]
       end
@@ -29,8 +28,7 @@ module Pivot
     end
 
     def self.unique_assignees(items)
-      items.map{|item| item[:assignee]}.uniq
+      items.map { |item| item[:assignee] }.uniq
     end
-
   end
 end

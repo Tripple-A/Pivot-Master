@@ -1,6 +1,5 @@
-#require './logger.rb'
+# require './logger.rb'
 module Pivot
-
   class Person < Logger
     def initialize(details)
       @email = details[:email]
@@ -9,26 +8,18 @@ module Pivot
       @items = []
     end
 
-    def email
-      @email
-    end
-    
-    def first_name
-      @first_name
-    end
+    attr_reader :email
 
-    def last_name
-      @last_name
-    end
+    attr_reader :first_name
 
-    def items
-      @items
-    end
+    attr_reader :last_name
+
+    attr_reader :items
 
     def add_item(item, logger = nil)
       @items << item
       item.assignee = @email
-      logger.info('item added') if logger
+      logger&.info('item added')
     end
   end
 end
