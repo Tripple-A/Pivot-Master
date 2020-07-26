@@ -9,50 +9,51 @@ RSpec.describe Pivot::Item do
 
   describe "#name" do
     it "gets the name" do
+      p item
       expect(item.name).to eq("EREC-10")
     end
   end
 
-  describe "#assignee" do
-    it "gets the assignee" do
-      expect(item.assignee).to eq("smith@example.com")
-    end
-  end
+  # describe "#assignee" do
+  #   it "gets the assignee" do
+  #     expect(item.assignee).to eq("smith@example.com")
+  #   end
+  # end
 
-  describe "#points" do
-    it "it gets the points" do
-      expect(item.points).to eq(2)
-    end
-  end
+  # describe "#points" do
+  #   it "it gets the points" do
+  #     expect(item.points).to eq(2)
+  #   end
+  # end
 
-  describe "#+" do
-    it "adds the item's points" do
-      expect(item + another_item).to eq(7)
-    end
-  end
+  # describe "#+" do
+  #   it "adds the item's points" do
+  #     expect(item + another_item).to eq(7)
+  #   end
+  # end
 
-  describe "#project_code" do
-    it "extracts the project code from the item name" do
-      expect(item.project_code).to eq('EREC')
-    end
+  # describe "#project_code" do
+  #   it "extracts the project code from the item name" do
+  #     expect(item.project_code).to eq('EREC')
+  #   end
 
-    it "extracts the project code from the item name (AZR)" do
-      expect(third_item.project_code).to eq('AZR')
-    end
-  end
+  #   it "extracts the project code from the item name (AZR)" do
+  #     expect(third_item.project_code).to eq('AZR')
+  #   end
+  # end
 
-  describe "#valid?" do
-    it "returns true if the project code is EREC" do
-      expect(item).to be_valid
-    end
+  # describe "#valid?" do
+  #   it "returns true if the project code is EREC" do
+  #     expect(item).to be_valid
+  #   end
 
-    it "returns true if the project code is AZR" do
-      expect(item).to be_valid
-    end
+  #   it "returns true if the project code is AZR" do
+  #     expect(item).to be_valid
+  #   end
 
-    it "returns false if the project code something else" do
-      expect(some_item).not_to be_valid
-    end
-  end
+  #   it "returns false if the project code something else" do
+  #     expect(some_item).not_to be_valid
+  #   end
+  # end
 
 end
