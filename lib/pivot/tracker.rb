@@ -14,17 +14,18 @@ module Pivot
       items.any? { |item| item[:assignee] === assignee }
     end
 
-    def self.add_points(items)
-      items.inject(0) { |sum, item| sum + item[:points] }
-    end
-
     def self.selected_points(items, assignee)
-      selected = items.select{|item| item[:assignee] == assignee}
-      add_points(selected)
+      items.select{|item| item[:assignee] == assignee}
+      .inject(0) { |sum, item| sum + item[:points] }
     end
 
     def self.total_points(items, assignee_hash = nil)
-      assignee_hash ? selected_points(items, assignee_hash[:assignee]) : add_points(items)
+      last_pivots = Hash.new
+      items.each do |item|
+        last_pivots[item[:assignee]] = item[:points]
+      end
+      sum = last_pivots.values.inject { |a, b| a + b }
+      assignee_hash ? selected_points(items, assignee_hash[:assignee]) : sum
     end
 
     def self.unique_assignees(items)

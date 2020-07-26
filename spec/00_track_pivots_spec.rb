@@ -38,9 +38,9 @@ RSpec.describe Pivot::Tracker do
   end
 
   describe ".total_points" do
-    # it "sums the total of points that was pivoted" do
-    #   expect(Pivot::Tracker.total_points(items)).to eq(13)
-    # end
+    it "sums the total of points that was pivoted" do
+      expect(Pivot::Tracker.total_points(items)).to eq(13)
+    end
 
     it "sums the total points that an assignee pivoted" do
       expect(Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')).to eq(5)
