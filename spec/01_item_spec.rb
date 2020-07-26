@@ -14,23 +14,23 @@ RSpec.describe Pivot::Item do
     end
   end
 
-  # describe "#assignee" do
-  #   it "gets the assignee" do
-  #     expect(item.assignee).to eq("smith@example.com")
-  #   end
-  # end
+  describe "#assignee" do
+    it "gets the assignee" do
+      expect(item.assignee).to eq("smith@example.com")
+    end
+  end
 
-  # describe "#points" do
-  #   it "it gets the points" do
-  #     expect(item.points).to eq(2)
-  #   end
-  # end
+  describe "#points" do
+    it "it gets the points" do
+      expect(item.points).to eq(2)
+    end
+  end
 
-  # describe "#+" do
-  #   it "adds the item's points" do
-  #     expect(item + another_item).to eq(7)
-  #   end
-  # end
+  describe "#+" do
+    it "adds the item's points" do
+      expect(item + another_item).to eq(7)
+    end
+  end
 
   # describe "#project_code" do
   #   it "extracts the project code from the item name" do
