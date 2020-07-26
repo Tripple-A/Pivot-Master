@@ -1,5 +1,14 @@
 module Pivot
   class Tracker
-    # Code here!
+    
+    def self.count(items)
+      items.length
+    end
+
+    def self.item_for(items, assignee)
+      selected_items = items.select{|item| item[:assignee] == assignee}
+      selected_items.last
+    end
+
   end
 end
