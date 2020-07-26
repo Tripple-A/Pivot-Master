@@ -27,5 +27,9 @@ module Pivot
       assignee_hash ? selected_points(items, assignee_hash[:assignee]) : add_points(items)
     end
 
+    def self.unique_assignees(items)
+      items.map{|item| item[:assignee]}.uniq
+    end
+
   end
 end
