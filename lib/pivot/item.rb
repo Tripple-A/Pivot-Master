@@ -5,6 +5,7 @@ module Pivot
       @name = details[:name]
       @assignee = details[:assignee]
       @points = details[:points]
+      @project_code = @name.split('-')[0]
     end
 
     def name
@@ -21,6 +22,16 @@ module Pivot
 
     def +(another_item)
       @points + another_item.points
+    end
+
+    def project_code
+      @project_code
+    end
+
+    def valid?
+      valid_codes = ['AZR', 'EREC']
+      return true if valid_codes.include?(@project_code) 
+      false
     end
   end
 end
