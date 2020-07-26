@@ -27,32 +27,32 @@ RSpec.describe Pivot::Tracker do
     end
   end
 
-  # describe ".pivoted?" do
-  #   it "checks if cesar@example.com is on the list of people that pivoted" do
-  #     expect(Pivot::Tracker.pivoted?(items, "cesar@example.com")).to be true
-  #   end
+  describe ".pivoted?" do
+    it "checks if cesar@example.com is on the list of people that pivoted" do
+      expect(Pivot::Tracker.pivoted?(items, "cesar@example.com")).to be true
+    end
 
-  #   it "checks if johnyyhair@example.com is on the list of people that pivoted" do
-  #     expect(Pivot::Tracker.pivoted?(items, "johnyyhair@example.com")).to be false
-  #   end
-  # end
+    it "checks if johnyyhair@example.com is on the list of people that pivoted" do
+      expect(Pivot::Tracker.pivoted?(items, "johnyyhair@example.com")).to be false
+    end
+  end
 
-  # describe ".total_points" do
-  #   it "sums the total of points that was pivoted" do
-  #     expect(Pivot::Tracker.total_points(items)).to eq(13)
-  #   end
+  describe ".total_points" do
+    # it "sums the total of points that was pivoted" do
+    #   expect(Pivot::Tracker.total_points(items)).to eq(13)
+    # end
 
-  #   it "sums the total points that an assignee pivoted" do
-  #     expect(Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')).to eq(5)
-  #   end
-  # end
+    it "sums the total points that an assignee pivoted" do
+      expect(Pivot::Tracker.total_points(items, assignee: 'johndough@example.com')).to eq(5)
+    end
+  end
 
-  # describe ".unique_assignees" do
-  #   it "gets the unique assignee emails tbat pivoted" do
-  #     unique_assignees = Pivot::Tracker.unique_assignees(items)
+  describe ".unique_assignees" do
+    it "gets the unique assignee emails tbat pivoted" do
+      unique_assignees = Pivot::Tracker.unique_assignees(items)
 
-  #     expect(unique_assignees.count).to eq(5)
-  #   end
-  # end
+      expect(unique_assignees.count).to eq(5)
+    end
+  end
 
 end

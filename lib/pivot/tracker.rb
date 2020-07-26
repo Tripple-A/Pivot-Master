@@ -10,5 +10,22 @@ module Pivot
       selected_items.last
     end
 
+    def self.pivoted?(items, assignee)
+      items.any? { |item| item[:assignee] === assignee }
+    end
+
+    def self.add_points(items)
+      items.inject(0) { |sum, item| sum + item[:points] }
+    end
+
+    def self.selected_points(items, assignee)
+      selected = items.select{|item| item[:assignee] == assignee}
+      add_points(selected)
+    end
+
+    def self.total_points(items, assignee_hash = nil)
+      assignee_hash ? selected_points(items, assignee_hash[:assignee]) : add_points(items)
+    end
+
   end
 end
