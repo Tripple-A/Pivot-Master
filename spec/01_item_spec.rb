@@ -9,7 +9,6 @@ RSpec.describe Pivot::Item do
 
   describe "#name" do
     it "gets the name" do
-      p item
       expect(item.name).to eq("EREC-10")
     end
   end
