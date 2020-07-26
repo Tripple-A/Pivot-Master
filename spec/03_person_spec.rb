@@ -38,8 +38,8 @@ RSpec.describe Pivot::Person do
     it "should be able to optionally log the event via a block" do
       expect(logger).to receive(:info).with("item added").and_return(true)
 
-      person.add_item(item) { logger.info "item added" }
+      person.add_item(item, logger) { logger.info "item added" }
     end
-  end
+   end
 
 end

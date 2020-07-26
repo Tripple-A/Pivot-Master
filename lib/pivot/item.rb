@@ -1,6 +1,6 @@
 module Pivot
   class Item
-    # Code here!
+    attr_accessor :assignee
     def initialize(details)
       @name = details[:name]
       @assignee = details[:assignee]
