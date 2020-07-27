@@ -6,4 +6,4 @@
 
 * In the same file as stated above, the item_for method is indicated to find 'the item' for an assignee. The word 'the' is more likely to mean one particular item, but considering the assignee possesses more than one item, the last occuring item has been returned.
 
-* In 03_person_spec.rb, logger is not passed into the person.add_item call to enable the add_item function optionally log an item in the presence of a Logger instance.
+* In 03_person_spec.rb, logger is not passed into the person.add_item call to enable the add_item function optionally log an item in the presence of a Logger instance. I presume it should be passed considering we want the logging to be optional

@@ -1,3 +1,4 @@
+require 'logger'
 module Pivot
   class Person
     def initialize(details)
@@ -15,10 +16,10 @@ module Pivot
 
     attr_reader :items
 
-    def add_item(item, logger = nil)
+    def add_item(item)
       @items << item
       item.assignee = @email
-      logger&.info('item added')
+      Logger.last.info('item added')
     end
   end
 end
