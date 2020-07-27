@@ -1,6 +1,5 @@
-# require './logger.rb'
 module Pivot
-  class Person < Logger
+  class Person
     def initialize(details)
       @email = details[:email]
       @first_name = details[:first_name]
