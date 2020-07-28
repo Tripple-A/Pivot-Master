@@ -22,8 +22,6 @@ This is a Ruby file containing modules, classes and tests.
 <!-- INSTALLATION -->
 ## Installation of This Repository
 
-Once you have installed the requiered packages shown on the [Required Installations](#required-installations), proceed with the following steps
-
 Clone the Repository,
 
 ```Shell
