@@ -1,6 +1,8 @@
 module Pivot
   class Item
     attr_accessor :assignee
+    attr_reader :name, :points, :project_code
+
     def initialize(details)
       @name = details[:name]
       @assignee = details[:assignee]
@@ -8,17 +10,10 @@ module Pivot
       @project_code = @name.split('-')[0]
     end
 
-    attr_reader :name
-
-    attr_reader :assignee
-
-    attr_reader :points
 
     def +(another_item)
       @points + another_item.points
     end
-
-    attr_reader :project_code
 
     def valid?
       valid_codes = %w[AZR EREC]
