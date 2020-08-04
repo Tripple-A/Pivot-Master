@@ -10,7 +10,6 @@ module Pivot
       @project_code = @name.split('-')[0]
     end
 
-
     def +(another_item)
       @points + another_item.points
     end
