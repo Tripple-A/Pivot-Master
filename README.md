@@ -4,7 +4,7 @@ This is a Ruby file containing modules, classes and tests.
 
 ## Table of Contents
 * [Perceived Errors](#perceived-errors)
-* [Instalation of This App](#instalation)
+* [Installation of This App](#installation)
 * [License](#license)
 * [Contact](#contact)
 
